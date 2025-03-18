@@ -6,7 +6,6 @@ import confirmationMail from '../templates/index.template.js'
  
 const senderMail = process.env.EMAILID
 const API_KEY = process.env.BREVO_API_KEY
- 
 const ConfirmationMailSent = async function(emailData){
     // receipentEmail, name, title, body, route, randomKey
     // const link = `${REDIRECTIONS.BACKEND_BASE_URL}${emailData.route}?token=${emailData.randomKey}`
@@ -23,7 +22,7 @@ const ConfirmationMailSent = async function(emailData){
             email: senderMail,
             name: "SPAutomobile"
         }],
-        subject: emailData?.title,
+        subject: "EquiryConfirmation##SPAutomobile",
         htmlContent: confirmationMail(emailData.name, emailData.address, emailData.mobileNo, emailData.carModel,emailData.messageContent)
         
     }

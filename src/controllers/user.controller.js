@@ -21,9 +21,9 @@ try {
             carModel,
             messageContent :"Thanks for querying on SP automobile, our team will shortly reach to brief you about services and booking  "
         } 
-        console.log(data) 
+        // console.log(data) 
         const mailres = await ConfirmationMailSent (data)
-        console.log(mailres)
+        // console.log(mailres)
         return res.status(200).json(mailres)
     }        
 } 

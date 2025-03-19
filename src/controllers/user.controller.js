@@ -42,8 +42,8 @@ const keepAlive = async(req, res) => {
             .json(new ApiResponse(400, {status: 'OK'}, 'SEQ_NUM is missing'))
     }
     const data1 = {
-        status: "200",
-        message: "keepAlive"
+        Status: "200",
+        Message: "keepAlive"
 
     }
     console.log(`[${new Date().toISOString()}] Heart_Beat_RES-[${SEQ_NUM}]: SENT OK`)    

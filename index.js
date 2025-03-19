@@ -16,7 +16,7 @@ connectDB()
         app.post("/submitform",enquireForm)
         app.get('/heartbeat/:sequenceId', (keepAlive))
         app.listen(process.env.PORT || 5000, ()=> {
-            console.log(`✅ Server is running on port: ${process.env.PORT || 5000}`)
+            console.log(`Server is running on port: ${process.env.PORT || 5000}`)
         })
     })
     .catch((err) => {

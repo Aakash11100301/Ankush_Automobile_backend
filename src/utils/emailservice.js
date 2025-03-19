@@ -1,7 +1,6 @@
 import { SENDER_NAME, BREVO_URI} from '../Config/constants.js'
 import axios from 'axios'
 import confirmationMail from '../templates/index.template.js'
-
 // npm install axios
  
 const senderMail = process.env.EMAILID
@@ -22,7 +21,7 @@ const ConfirmationMailSent = async function(emailData){
             email: senderMail,
             name: "SPAutomobile"
         }],
-        subject: "EquiryConfirmation##SPAutomobile",
+        subject: "EquiryConfirmation##SPAutomobiled",
         htmlContent: confirmationMail(emailData.name, emailData.address, emailData.mobileNo, emailData.carModel,emailData.messageContent)
         
     }

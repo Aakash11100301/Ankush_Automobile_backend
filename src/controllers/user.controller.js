@@ -1,8 +1,9 @@
 import {ConfirmationMailSent} from "../utils/emailservice.js"
+import SMSService from "../utils/message.js"
 
 const enquireForm = async(req,res)=> {
 try {
-    const {name,carModel,email,mobileNo, address} = req.body
+    const {name,carModel,email,mobileNo, address,message} = req.body
     if (!name||!carModel||!email||!mobileNo||!address) {
         const data = {
             StatusCode: "422",
@@ -21,7 +22,11 @@ try {
             carModel,
             messageContent :"Thanks for querying on SP automobile, our team will shortly reach to brief you about services and booking  "
         } 
+        const sendSMS = await SMSService (name, mobileNo, message)
         // console.log(data) 
+        if (!sendSMS) {
+            console.log("error")
+        }
         const mailres = await ConfirmationMailSent (data)
         // console.log(mailres)
         return res.status(200).json(mailres)

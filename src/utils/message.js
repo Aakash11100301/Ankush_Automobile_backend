@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express';
 import cors from 'cors';
-import twilio from 'X';
+import twilio from 'twilio';
 
 
 const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);

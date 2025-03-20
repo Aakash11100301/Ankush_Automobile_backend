@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import express from 'express';
 import cors from 'cors';
-import twilio from 'twilio';
+import twilio from 'X';
 
 
 const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
@@ -9,7 +9,7 @@ const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
 const SMSService = async (name, mobileNo, message) => {
     try {
         // const { name, mobileNo, message } = req.body;
-        const ownerNumber = 'whatsapp:+918454844847'; // Owner's WhatsApp Number
+        const ownerNumber = 'whatsapp:+917973504671'; // Owner's WhatsApp Number
 
         const msg = await client.messages.create({
             from: 'whatsapp:+14155238886', // Twilio Sandbox Number

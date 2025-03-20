@@ -12,7 +12,7 @@ const SMSService = async (name, mobileNo, message) => {
         const ownerNumber = 'whatsapp:+919535144580'; // Owner's WhatsApp Number
 
         const msg = await client.messages.create({
-            from: 'whatsapp:+12202164186', // Twilio Sandbox Number
+            from: 'whatsapp:+14155238886', // Twilio Sandbox Number
             to: ownerNumber,
             body: `New Inquiry! 🚗\nName: ${name}\nPhone: ${mobileNo}\nMessage: ${message}`
         });
